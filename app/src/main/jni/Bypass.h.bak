@@ -1,0 +1,44 @@
+// credit : @NEXTJEK
+
+void (*org_NewDetectionSystem)(...);
+void new_DetectionSystem()
+{
+    return new_DetectionSystem();
+}
+
+bool (*_Bypass_AntiCheat_)(void *Jek);
+bool Bypass_AntiCheat_(void *Jek) {
+    return false;
+}
+
+int (*_ReamingBanned)();
+int ReamingBanned() {
+    return 0;
+}
+
+void initByps() {
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE(""), OBFUSCATE("BattleData") , OBFUSCATE("AddFactorRemainBanLevel"), 2), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE(""), OBFUSCATE("BattleData") , OBFUSCATE("SubFactorRemainBanLevel"), 1), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE(""), OBFUSCATE("BattleData") , OBFUSCATE("BanFactors"), 2), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE(""), OBFUSCATE("UIWindowMultiplayerRemote") , OBFUSCATE("ShowPlayerBannedDetails"), 2), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE(""), OBFUSCATE("UIWindowMultiplayerRemote") , OBFUSCATE("ShowTipsWithErrorCode"), 1), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE("Utils.CommonUtils"), OBFUSCATE("ErrorUtil") , OBFUSCATE("ShowPlayerBannedDetails"), 2), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE("Utils.CommonUtils"), OBFUSCATE("ErrorUtil") , OBFUSCATE("HandleApiException"), 1), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE("Utils.CommonUtils"), OBFUSCATE("ErrorUtil") , OBFUSCATE("HandleApiException_Unauthorized"), 1), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE("Utils.CommonUtils"), OBFUSCATE("ErrorUtil") , OBFUSCATE("HandleApiException_Common"), 1), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE("RGScript.UI.Util"), OBFUSCATE("SkillDemoAntiCheat") , OBFUSCATE("OnCheck"), 0), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE("RGScript.UI.Util"), OBFUSCATE("SkillDemoAntiCheat") , OBFUSCATE("Punish"), 0), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE(""), OBFUSCATE("PlayerSaveData") , OBFUSCATE("set_last_check_item_ui_report_cheating_time"), 1), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE("RGScript.ItemStation"), OBFUSCATE("UIItemStationWindowDesc") , OBFUSCATE("ReportCheating"), 0), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE("RGScript.Data"), OBFUSCATE("AntiCrackingData") , OBFUSCATE("OnResetBattleData"), 0), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE("RGScript.Data"), OBFUSCATE("AntiCrackingData") , OBFUSCATE("CheckCoinChange"), 0), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE("RGScript.Data"), OBFUSCATE("AntiCrackingData") , OBFUSCATE("ReportMsg"), 0), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE("RGScript.Data"), OBFUSCATE("AntiCrackingData") , OBFUSCATE("Report"), 3), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE("RGScript.Data"), OBFUSCATE("DataMgr") , OBFUSCATE("get_AntiCrackingData"), 3), (void *) new_DetectionSystem, (void **) &org_NewDetectionSystem);
+	
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE(""), OBFUSCATE("BattleData") , OBFUSCATE("IsFactorBanned"), 1), (void *) Bypass_AntiCheat_, (void **) &_Bypass_AntiCheat_);
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE(""), OBFUSCATE("BattleData") , OBFUSCATE("IsFactorBanedAndMakeEffect"), 1), (void *) Bypass_AntiCheat_, (void **) &_Bypass_AntiCheat_);
+	
+	Tools::Hook((void *) (uintptr_t)Il2CppGetMethodOffset(OBFUSCATE("Assembly-CSharp.dll"), OBFUSCATE(""), OBFUSCATE("BattleData") , OBFUSCATE("GetFactorRemainBanLevel"), 1), (void *) ReamingBanned, (void **) &_ReamingBanned);
+	
+}
